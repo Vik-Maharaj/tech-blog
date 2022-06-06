@@ -2,7 +2,19 @@ async function deleteFormHandler(event) {
 
     event.preventDefault();
 
+    let newId = event.currentTarget.getAttribute("data-commentid");
 
+    console.log(newId);
+
+    const response = await fetch(`/api/comments/${newId}`, {
+        method: 'DELETE'
+    });
+
+    if (response.ok) {
+        document.location.reload();
+    } else {
+        alert(response.statusText);
+    }
 
 };
 
