@@ -1,0 +1,14 @@
+<main class="w-100 vh-100 background">
+    <section class="create-posts d-flex flex-wrap justify-content-center">
+    <button id="create-post-btn" type="submit" class="btn-create create-marg btn rounded-pill shadow">Post</button>
+    <article class="create-post">
+        <input name="title" id="title" type="text" autofocus="true" placeholder="Post Title" class="title rounded-pill text-center" />
+        <textarea class="description mt-0" type="text" id="description"></textarea>
+    </article>
+    </section>
+</main>
+
+
+{{#if loggedIn}}
+<script src="/javascript/create-post.js"></script>
+{{/if}}
