@@ -1,0 +1,17 @@
+<main class="background vh-100">
+    <section class="posts vh-100">
+        {{#each posts}}
+        <a href="/posts/{{id}}" class="link">
+            <article class="post">
+                <div class="d-flex flex-wrap align-items-center justify-content-between">
+                    <h2>{{fix_case title}}</h2>
+                    <p>posted by {{user.username}} on {{format_date created_at}}</p>
+                </div>
+                <p class="home-content">
+                    {{limit_char content}}
+                </p>
+            </article>
+        </a>
+        {{/each}}
+    </section>
+</main>
