@@ -32,28 +32,38 @@
 
     {{!-- <header class="sticky-top"> --}}
     
-
+<header class="sticky-top">
     <nav class="navbar navbar-expand">
         <h1 class="animate-character text">AiME</h1>
-        
+    </header>
+
+
+    <nav class="nav justify-content-center">   
     <p class="mb-1 text-center navbar-brand">
         {{#if loggedIn}}
-        {{username}}, share your thoughts with the world
+        Welcome back {{username}}!
+        {{else}}
+        <a class="logo" href="/"><img src="/stylesheets/assets/AIME-film-logo.png" alt="AiME-logo"></a>
         {{/if}}
     </p>
+    </nav>
+
+
+
     {{!-- <div class="nav justify-content-end"> --}}
+        <nav class="nav justify-content-center">
         <ul class="nav justify-content-center">
             {{!-- <li class="nav-item"> --}}
             {{!-- <i class="fa-connectdevelop"></i> --}}
 
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li>
+            {{!-- <ul class="nav-item"> --}}
+                <li class="nav-item">
                     <a href="/" class="nav-link">Home</a>
                 </li>
                 {{#if loggedIn}}
 
                     {{#if dashboardPage}}
-                    <li>
+                    <li class="nav-item">
                     <a href="/dashboard" class="nav-link">Dashboard</a>
                     </li>
                     {{/if}}
@@ -62,20 +72,21 @@
                     </li>
                 {{else}}
                     {{#if loginPage}}
-                    <li>
+                    <li class="nav-item">
                         <a href="/login" class="nav-link">Login</a>
                     </li>
                     {{/if}}
                     {{#if signUpPage}}
-                    <li>
+                    <li class="nav-item">
                         <a href="/sign-up" class="nav-link">Sign Up</a>
                     </li>
                     {{/if}}
             
                 {{/if}}
-            </ul>
+            {{!-- </ul> --}}
         {{!-- </li> --}}
         </ul>
+        </nav>
         {{!-- </div> --}}
 
 
