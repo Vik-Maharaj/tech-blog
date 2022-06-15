@@ -174,25 +174,7 @@ nav p {
         background-position: -200% center;
     }
 }
-/*  */
 
-/* animation 2 */
-/* .neons {
-    animation: glow 2s ease-in-out infinite alternate;
-}
-  
-@-webkit-keyframes glow {
-    from {
-        color: #fff;
-        text-shadow: 0 0 10px #00fff2, 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 90px #00fff2;
-        }
-    
-    to {
-        color: rgb(107, 66, 162);
-        text-shadow: 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 80px #00fff2, 0 1 90px #00fff2;
-    }
-} */
-/*  */
 
 header p {
     color: var(--secondary);
@@ -352,10 +334,7 @@ main {
     visibility: hidden;
     transition: all 500ms ease-out;
 }
-/*****************************************************/
-/*****************************************************/
 
-/***** HOME AND DASHBOARD PAGES*****/
 .posts {
     padding: 0 40px 0 40px;
 }
