@@ -3,10 +3,11 @@ const { Post, User, Comment } = require('../models');
 
 const withAuth = require('../utils/auth');
 
+// Route for HOME page
 router.get('/', (req, res) => {
     console.log(req.session);
 
-    Post.findAll({
+    Post.findAll({ 
         attributes: [
             'id',
             'content',
@@ -47,6 +48,8 @@ router.get('/', (req, res) => {
     .catch(err => res.status(500).json(err));
 });
 
+
+// Route for LOGIN page
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -62,6 +65,7 @@ router.get('/login', (req, res) => {
 });
 
 
+// Route for SIGN UP page
 router.get('/sign-up', (req, res) => {
     res.render('sign-up',
         {
@@ -72,6 +76,7 @@ router.get('/sign-up', (req, res) => {
 });
 
 
+// Route for POST page
 router.get('/posts/:id', (req, res) => {
 
     Post.findOne({
@@ -116,8 +121,6 @@ router.get('/posts/:id', (req, res) => {
             }
         });
 
-        console.log('tHIS IS THE POST', post);
-
         res.render('single-post', {
             post,
             loggedIn: req.session.loggedIn,
@@ -134,6 +137,8 @@ router.get('/posts/:id', (req, res) => {
     });
 })
 
+
+// Route for DASHBOARD page
 router.get('/dashboard', withAuth, (req, res) => {
     if (!req.session) {
         res.redirect('/');
@@ -167,7 +172,7 @@ router.get('/dashboard', withAuth, (req, res) => {
     });
 });
 
-router.get('/create-post', withAuth, (req, res) => {
+router.get('/create-post', withAuth, (req, res) => { 
     if (!req.session) {
         res.redirect('/');
         return;
@@ -183,6 +188,7 @@ router.get('/create-post', withAuth, (req, res) => {
 });
 
 
+// Route for EDIT POST page
 router.get('/edit-post/:id', withAuth, (req, res) => {
     Post.findByPk(req.params.id, {
         attributes: [
