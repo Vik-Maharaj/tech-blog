@@ -17,7 +17,6 @@ Comment.init(
             validate: { 
                 len: [1]
             }
-
         },
         can_delete: {
             type: DataTypes.BOOLEAN,
