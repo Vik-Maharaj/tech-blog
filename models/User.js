@@ -9,6 +9,7 @@ class User extends Model {
     }
 }
 
+// Defines user table configuration
 User.init(
     {
         id: {
@@ -34,16 +35,18 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [6]
+                len: [6] // length of password, can add number and special character params after
             }
         }
     },
     {  
         hooks: {
+            // Runs before the user created method
             async beforeCreate(newUserData) {
                 newUserData.password = await bcrypt.hash(newUserData.password, 10);
                 return newUserData;
             },
+            //Runs before the update user method
             async beforeUpdate(updatedUserData) {
                 updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
                 return updatedUserData;
