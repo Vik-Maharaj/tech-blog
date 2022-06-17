@@ -3,6 +3,7 @@ const { Comment, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
+// GET route for comments
 router.get('/', (req, res) => {
     Comment.findAll({
         order: [['created_at', 'DESC']],
@@ -17,6 +18,8 @@ router.get('/', (req, res) => {
     .catch(err => res.status(500).json(err));
 });
 
+
+// POST route for comments
 router.post('/', withAuth, (req, res) => {
     Comment.create({
         comment_text: req.body.comment_text,
@@ -28,6 +31,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 
+// DELETE route for comments
 router.delete('/:id', withAuth, (req, res) => {
     Comment.destroy({
         where: {
@@ -36,7 +40,7 @@ router.delete('/:id', withAuth, (req, res) => {
     })
     .then(dbCommentData => {
         if (!dbCommentData) {
-          res.status(404).json({ message: 'No comment found with this id!' });
+          res.status(404).json({ message: 'Comment ID not found' });
           return;
         }
         res.json(dbCommentData);
