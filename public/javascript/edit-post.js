@@ -9,8 +9,6 @@ async function editFormHandler(event) {
         window.location.toString().split('/').length - 1
     ];
 
-    console.log(title, content, id);
-
     const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
