@@ -4,8 +4,6 @@ async function deleteFormHandler(event) {
 
     let newId = event.currentTarget.getAttribute("data-commentid");
 
-    console.log(newId);
-
     const response = await fetch(`/api/comments/${newId}`, {
         method: 'DELETE'
     });
