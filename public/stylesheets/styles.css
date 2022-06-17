@@ -1,5 +1,4 @@
 :root {
-    /* --primary: #e0d6ff; */
     --primary: #e8e8e6;
     --secondary: #989895;
     --tertiary: #464546;
@@ -15,32 +14,16 @@ body {
 }
 
 .background {
-    
     background-color: transparent;
-    
-    /* background: #C9CCD3;
- background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
- background-blend-mode: lighten;
-
-    background-size: cover; */
     background-image: url("../stylesheets/assets/tech-lines-background.png");
 
 }
 
-
-/* HERO STYLES */
 header {
-    /* background: transparent; */
-    /* background-attachment: fixed; */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url("../stylesheets/assets/tech-background-header2.png");
-    /* background-image: linear-gradient(to right, #312f2f 0%, black 100%); */
-   
-
-    
-
     background-size: cover;
     padding: .5% 0 .5% 0;
     display: flex;
@@ -55,7 +38,6 @@ header h1 {
     color: var(--primary);
     font-size: 65px;
     width: 100%;
-    /* margin: 30px 0 0 50px; */
 }
 
 footer {
@@ -63,7 +45,6 @@ footer {
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url("../stylesheets/assets/tech-background-footer.png");
-    /* background-image: linear-gradient(to right, #312f2f 0%, black 100%); */
 }
 
 footer .col-lg-3 {
@@ -86,14 +67,11 @@ footer .nav {
 }
 
 
-
 nav {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url("../stylesheets/assets/tech-background-nav.png");
-    /* background-image: linear-gradient(to right, #312f2f 0%, black 100%); */
-    /* background-image: url("../stylesheets/assets/sanple-dark-background.jpg"); */
 }
 
 .navbar {
@@ -112,13 +90,16 @@ nav p {
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url("../stylesheets/assets/tech-background-links2.png");
-    /* background-image: linear-gradient(to right, #312f2f 0%, black 100%); */
 }
 
 .nav-link {
-    color: #e8e8e6;
+    color: var(--primary);
     font-size: 20px;
     padding: 10px 20px 10px 20px;
+}
+
+.nav-link:hover {
+    color: #b72828;
 }
 
 .mb-1 {
@@ -145,7 +126,6 @@ nav p {
   }
 
 
-/* animation 1 */
 .animate-character
 {
     background-image: linear-gradient(
@@ -161,7 +141,6 @@ nav p {
     background-size: 200% auto;
     color: #fff;
     background-clip: text;
-    text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: textclip 10s linear infinite;
@@ -175,12 +154,10 @@ nav p {
     }
 }
 
-
 header p {
     color: var(--secondary);
     font-size: 15px;
     width: 100%;
-    /* margin: 10px 0 0 50px; */
 }
 
 
@@ -210,7 +187,6 @@ ul li i {
     border-radius: 10px;
 }
 
-/* drop down effects */
 ul li i:hover {
     background-color:hsla(0,3%,4%,1);
     background-image:
@@ -274,12 +250,14 @@ ul li:not(:hover) ul li {
     overflow: auto;
 }
 
-/* MAIN STYLES */
+
 main {
     padding: 50px 30px 50px 30px;
 }
 
-/* MODAL SECTION */
+
+
+/* MODAL */
 .modal-single {
     position: fixed;
     z-index: 1;
@@ -335,6 +313,10 @@ main {
     transition: all 500ms ease-out;
 }
 
+
+
+
+/* HOME and DASHBOARD pages */
 .posts {
     padding: 0 40px 0 40px;
 }
@@ -344,13 +326,6 @@ main {
 }
 
 .post {
-    /* background-color: black;
-    opacity: 0.2; */
-    /* background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: url("../stylesheets/assets/tech-background-links2.png"); */
-
     background: rgba(0,0,0,0.2);
     border-radius: 20px;
     margin: 10px;
@@ -361,8 +336,6 @@ main {
     background-repeat: no-repeat;
     background-position: center center;
     background-image: url("../stylesheets/assets/tech-background-posts.png");
-
-    /* background: rgba(0,0,0,0.7); */
     border-radius: 20px 20px 0 0;
 }
 
@@ -390,23 +363,23 @@ main {
 .btn-create {
     font-size: 18px;
     margin-bottom: 20px;
-    padding: 5px 20px;
+    padding: 5px 50px;
 }
 
 .btn-create:hover {
-    color: var(--secondary);
-    background-color: #214a51;
+    color: var(--primary);
+    background-color: #932020;
     transition: all 0.6s ease-in-out;
 }
  
 .btn-create:not(:hover) {
     color: var(--primary);
-    background-color: #380f6e;
+    background-color: var(--tertiary);
     transition: all 0.7s ease-in-out;
 }
 
 
-/***** LOGIN AND SIGN-UP PAGES *****/
+/* LOGIN and SIGN-UP pages */
 .user-log {
     background: rgba(0,0,0,0.5);
     border-radius: 16px;
@@ -436,16 +409,6 @@ main {
  
 .btn-login:not(:hover) {
     color: var(--primary);
-    /* background-color:hsla(0,3%,4%,1);
-    background-image:
-    radial-gradient(at 5% 98%, rgb(24, 74, 81) 0px, transparent 50%),
-    radial-gradient(at 61% 25%, #214a51 0px, transparent 50%),
-    radial-gradient(at 96% 13%, hsla(183,87%,21%,1) 0px, transparent 50%),
-    radial-gradient(at 40% 20%, hsla(266,71%,26%,1) 0px, transparent 50%),
-    radial-gradient(at 2% 56%, hsla(268,89%,24%,1) 0px, transparent 50%),
-    radial-gradient(at 83% 87%, hsla(231,41%,14%,1) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, rgb(167, 53, 238) 0px, transparent 50%),
-    radial-gradient(at 80% 100%, rgb(121, 105, 240) 0px, transparent 50%); */
     background-color: var(--tertiary);
     transition: all 0.7s ease-in-out;
 }
@@ -466,10 +429,9 @@ main {
     background-color: var(--tertiary);
     transition: all 0.7s ease-in-out;
 }
-/*****************************************************/
-/*****************************************************/
 
-/***** CREATE POST PAGE *****/
+
+/* CREATE POST page */
 .create-marg {
     margin-bottom: 20px;
 }
@@ -502,23 +464,16 @@ main {
     border-radius: 20px;
     padding: 25px;
 }
-/*****************************************************/
-/*****************************************************/
 
-/***** POST PAGE *****/
+
+/* POST page */
 .view {
     padding: 0 120px 0 120px;
 }
 
 .view-post {
-    /* background-color: black;
-    opacity: 0.2; */
     border-radius: 20px;
     margin: 10px;
-}
-
-.view-post div {
-
 }
 
 .view-post h2 {
@@ -546,18 +501,17 @@ main {
 }
 
 .content::-webkit-scrollbar {
-    width: 12px;               /* width of the entire scrollbar */
+    width: 12px;          
 }
   
 .content::-webkit-scrollbar-track {
-    background: black;        /* color of the tracking area */
+    background: black;    
     border-radius: 20px; 
 }
   
 .content::-webkit-scrollbar-thumb {
-    background-color: var(--secondary);    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
-    /* border: 3px solid var(--primary);  creates padding around scroll thumb */
+    background-color: var(--secondary); 
+    border-radius: 20px;       
 }
 
 .comment-input {
@@ -566,25 +520,11 @@ main {
     border: none;
     border-radius: 15px;
     width: 100%;
-    /* margin-top: 20px; */
     height: 110px;
     padding: 15px;
 }
 
-/* .comments {
-    padding: 20px 130px 20px 0;
-    margin: 20px;
-    background-color: rgba(150, 146, 146, 0.7);
-    border: none;
-    border-radius: 15px;
-    width: 60%;
-} */
-
 #comments {
-    /* background-color: rgba(137, 135, 135, 0.7); */
-    /* justify-content: center; */
-    /* border: none;
-    border-radius: 15px; */
     padding: 15px;
 }
 
@@ -621,13 +561,11 @@ main {
 .delete-comment-btn:not(:hover) {
     color: var(--primary);
     border: 0.5px black solid;
-    /* background-color: var(--tertiary); */
     transition: all 0.7s ease-in-out;
 }
-/*****************************************************/
-/*****************************************************/
 
-/***** EDIT POST PAGE *****/
+
+/* EDIT POST page */
 .btn-delete {
     margin-top: 20px;
     padding: 5px 50px;
@@ -662,8 +600,8 @@ main {
     transition: all 0.7s ease-in-out;
 }
 
-/*****************************************************/
-/*****************************************************/
+
+/* MEDIA QUERIES */
 @media only screen and (max-width: 1100px) {
 
     div {
