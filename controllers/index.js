@@ -1,10 +1,11 @@
+// Required modules
 const router = require('express').Router();
-
 const apiRoutes = require('./api');
 const homeRoutes = require('./home-routes.js');
 
-// adds api to the routes url
+// URL for api routes
 router.use('/api', apiRoutes);
+// URL for home-routes
 router.use('/', homeRoutes);
 
 router.use((req, res) => {
@@ -12,3 +13,4 @@ router.use((req, res) => {
 });
 
 module.exports = router;
+
