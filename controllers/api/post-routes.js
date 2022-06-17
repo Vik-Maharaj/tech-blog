@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+
+// GET route for all posts
 router.get('/', (req, res) => {
     Post.findAll({ 
         attributes: [
@@ -31,6 +33,7 @@ router.get('/', (req, res) => {
 });
 
 
+// GET route for a single post
 router.get('/:id', (req, res) => {
 
     Post.findOne({
@@ -60,7 +63,7 @@ router.get('/:id', (req, res) => {
     })
     .then(dbPostData => {
         if (!dbPostData) {
-            res.status(404).json({ message: 'No post found with this id' });
+            res.status(404).json({ message: 'Post ID not found' });
             return;
         }
         res.json(dbPostData);
@@ -69,6 +72,7 @@ router.get('/:id', (req, res) => {
 });
 
 
+// POST route for a post
 router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
@@ -81,6 +85,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 
+// PUT route for a post
 router.put('/:id', withAuth, (req, res) => {
     Post.update(
         {
@@ -96,7 +101,7 @@ router.put('/:id', withAuth, (req, res) => {
     )
     .then(dbPostData => {
         if (!dbPostData) {
-            res.status(404).json({ message: 'No post found with this id' });
+            res.status(404).json({ message: 'Post ID not found' });
             return;
         }
          res.json(dbPostData);
@@ -104,8 +109,9 @@ router.put('/:id', withAuth, (req, res) => {
     .catch(err => res.status(500).json(err));
 });
 
+
+// DELETE route for a post
 router.delete('/:id', withAuth, (req, res) => {
-    console.log('id', req.params.id);
     Post.destroy({
         where: {
             id: req.params.id
@@ -113,7 +119,7 @@ router.delete('/:id', withAuth, (req, res) => {
     })
     .then(dbPostData => {
         if (!dbPostData) {
-            res.status(404).json({ message: 'No post found with this id' });
+            res.status(404).json({ message: 'Post ID not found' });
             return;
         }
 
