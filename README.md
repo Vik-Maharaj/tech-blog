@@ -2,18 +2,21 @@
 
 ## Description
 
-Competition is tough for companies operating in the internet retail space and they need websites that use the latest back end technologies to power their E-commerce in order to keep pace.
+Welcome to AiME - a CMS-style blog site focused on the latest news and advancements in AI generated artistry and content creation.
 
-Enter the purpose of this project: utilize Node.js, Express.js, MySQL, and Sequelize to create a back end application to manage a company's inventory database. The application is easily installed and initialized, and includes the following features:
+The site was created utilizing JavaScript, Node.js, Express.js, MySQL, Sequelize, and Handlebars to create a full-stack application that allows users to sign-up and post to the blog, and it includes the following features:
 
-- Once the user logs into MySQL and connects to the database, they are able to enter the schema and can then seed the database with test data
-- Once the user initializes the server, the Sequelize models are synced to the database
-- The user is then able to utilize API GET routes to retrieve data for their inventory's 'categories', 'products', or 'tags'
-- The user is also able to utilize API POST, PUT, and DELETE routes to create, update, and delete data from the database
+- When the user first visits the site, they are presented with the homepage that shows any existing blog posts, and navigation links to either log in or sign up
+- When the user signs up, they are prompted to create a username and password
+- Once a user is signed up, their credentials are saved – they can revisit the site at a later time and choose to log in
+- Once a user is signed in, they can see navigation links for the homepage, the dashboard, and the option to log out
+- When the user clicks on the homepage option in the navigation, they are taken to the homepage and presented with existing blog posts that include the post title and the date created
+- When the user enters a comment and clicks on the submit button while signed in, the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created
+- Once the user clicks on the button to add a new blog post, they are prompted to enter both the title and contents for their blog post, and when they create their new blog post, the title and contents of the post are saved – and the dashboard is subsequently updated
+- When the user clicks on the logout option in the navigation, they are signed out of the site
 
-Being able to retrieve, add, and modify data is a critical aspect of running any E-commerce business, and the functionality enabled by this application allows that to happen.
 
-![Vik's E-Commerce Back End Application Start Database Gif](public/stylesheets/assets/screenshot.png)
+![AiME Tech Blog screenshot](public/stylesheets/assets/screenshot.png)
 
 The deployed site can be found at https://aime-news.herokuapp.com.
 
@@ -29,19 +32,19 @@ To use this application, you first need to have MySQL installed, and then initia
 ```
 mysql -u root -p
 ``` 
-Next, enter your password for MySQL. Once you are in your server run: 
+Next, enter your password for MySQL and source the database: 
 ```
 SOURCE db/schema.sql
 quit
 ``` 
-Then run:
+Then run the following to seed the database:
 ```
-npm run seeds
+npm run seed
 ```
 Finally, initialize the server: 
 ```
-nodemon server.js
-
+npm run start
+```
 
 ## Credits
 
@@ -72,5 +75,11 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTH
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
 ![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white)
+
+![Built with Handlebars](https://camo.githubusercontent.com/157406d523db8de87230e52d6800e8afa82a51feca33cb56f7f1c80fc557704f/687474703a2f2f706978656c2d636f6f6b6572732e6769746875622e696f2f6275696c742d776974682d6261646765732f68616e646c65626172732f68616e646c65626172732d73686f72742d666c61742e706e67)
+
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
