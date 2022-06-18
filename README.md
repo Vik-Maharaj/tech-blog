@@ -13,6 +13,10 @@ Enter the purpose of this project: utilize Node.js, Express.js, MySQL, and Seque
 
 Being able to retrieve, add, and modify data is a critical aspect of running any E-commerce business, and the functionality enabled by this application allows that to happen.
 
+![Vik's E-Commerce Back End Application Start Database Gif](public/stylesheets/assets/screenshot.png)
+
+The deployed site can be found at https://aime-news.herokuapp.com.
+
 
 ## Installation
 
@@ -20,25 +24,23 @@ To install this application, first clone the repo to your local machine. Then, y
 
 ## Usage
 
-To use this application, you first need to have MySQL installed, and then initialize the database:
+To use this application, you first need to have MySQL installed, and then initialize the database with the following command:
 
-![Vik's E-Commerce Back End Application Start Database Gif](src/Untitled-1.gif)
-
-Next, source the database:
-
-![Vik's E-Commerce Back End Application Source Database Gif](src/Untitled-2.gif)
-
-Then, in order to seed the the database, open up the repo's folder in your terminal/bash shell and run the command ```npm run seed```:
-
-![Vik's E-Commerce Back End Application Seed Database Gif](src/Untitled-3.gif)
-
-Once those steps have been completed, you are ready to use the application by entering either of the following commands  ```node server.js``` or ```npm run start```. 
-
-![Vik's E-Commerce Back End Application Start Server Gif](src/Untitled-4.gif)
-
-You will then be informed that the server has started, and which port it is currently running on.
-
-A full video walkthrough can be found [here](https://vimeo.com/712703436).
+```
+mysql -u root -p
+``` 
+Next, enter your password for MySQL. Once you are in your server run: 
+```
+SOURCE db/schema.sql
+quit
+``` 
+Then run:
+```
+npm run seeds
+```
+Finally, initialize the server: 
+```
+nodemon server.js
 
 
 ## Credits
