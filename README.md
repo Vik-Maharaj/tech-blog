@@ -8,11 +8,11 @@ The site was created utilizing JavaScript, Node.js, Express.js, MySQL, Sequelize
 
 - When the user first visits the site, they are presented with the homepage that shows any existing blog posts, and navigation links to either log in or sign up
 - When the user signs up, they are prompted to create a username and password
-- Once a user is signed up, their credentials are saved – they can revisit the site at a later time and choose to log in
+- Once a user is signed up, their credentials are saved—they can revisit the site at a later time and choose to log in
 - Once a user is signed in, they can see navigation links for the homepage, the dashboard, and the option to log out
 - When the user clicks on the homepage option in the navigation, they are taken to the homepage and presented with existing blog posts that include the post title and the date created
 - When the user enters a comment and clicks on the submit button while signed in, the comment is saved and the post is updated to display the comment, the comment creator’s username, and the date created
-- Once the user clicks on the button to add a new blog post, they are prompted to enter both the title and contents for their blog post, and when they create their new blog post, the title and contents of the post are saved – and the dashboard is subsequently updated
+- Once the user clicks on the button to add a new blog post, they are prompted to enter both the title and contents for their blog post, and when they create their new blog post, the title and contents of the post are saved—the dashboard is subsequently updated
 - When the user clicks on the logout option in the navigation, they are signed out of the site
 
 
